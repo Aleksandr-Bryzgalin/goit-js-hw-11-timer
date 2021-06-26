@@ -1,4 +1,4 @@
-.conteiner {
+.timer {
   padding: 20px;
   width: 700px;
   height: auto;
@@ -17,9 +17,13 @@
   border-radius: 15px;
 }
 
-.conteiner-box {
-  width: auto;
-  height: 40px;
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 200px;
+  height: auto;
 
   text-align: center;
   background-color: rgb(118, 138, 248);
@@ -32,6 +36,6 @@
   text-decoration: none;
 }
 
-.conteiner-box:not(:last-child) {
+.field:not(:last-child) {
   margin-right: 30px;
 }
