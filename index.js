@@ -9,21 +9,20 @@ const refs = {
 }
 
 class Timer {
-    constructor({onTick, targetDate}) {
+    constructor({onTick, targetDate, selector}) {
+        this.timer = selector;
         this.onTick = onTick;
         this.targetDate = targetDate;
+        this.start();        
     }
 
     start() {
-        const startTime = Date.now()
-
         setInterval(() => {
-            // const currentTime = Date.now();
+            const startTime = Date.now()
             const deltaTime = this.targetDate - startTime ;
             const time = this.getTimeComponents(deltaTime);
             
-            this.onTick(time);
-                                   
+            this.onTick(time);                                               
         }, 1000);
     }
 
@@ -39,15 +38,10 @@ class Timer {
     dubleNumbersPad(value) {
         return String(value).padStart(2, '0');
     }
+
+    
 }
 
-const timer = new Timer({
-    onTick: updateClockfase,
-    selector: '#timer-1',
-    targetDate: new Date('Jun 28, 2021'),
-});
-
-timer.start()
 
 function updateClockfase({ days, hours, mins, secs }) {
     refs.daysRef.textContent = `${days}`;
@@ -56,4 +50,16 @@ function updateClockfase({ days, hours, mins, secs }) {
     refs.secsRef.textContent = `${secs}`
 }
 
-console.log(Date);
+
+new Timer({
+    onTick: updateClockfase,
+    selector: '#timer-1',
+    targetDate: new Date('Jan 1, 2022'),
+   
+});
+
+
+
+
+
+

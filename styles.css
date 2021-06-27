@@ -1,9 +1,19 @@
+body {
+  background-color: aliceblue;
+  font-family: "Nanum Pen Script", cursive;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(196, 35, 35);
+  font-size: 64px;
+}
 .timer {
   padding: 20px;
   width: 700px;
   height: auto;
 
-  background-color: rgb(110, 110, 110);
+  background-color: rgba(110, 110, 110, 0.466);
 
   margin-left: auto;
   margin-right: auto;
@@ -30,12 +40,17 @@
   padding: 15px 15px;
 
   border-radius: 15px;
-
-  font-size: 25px;
-  font-weight: 500;
-  text-decoration: none;
 }
 
 .field:not(:last-child) {
   margin-right: 30px;
+}
+
+.value {
+  font-size: 50px;
+}
+
+.label {
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.582);
 }
