@@ -1,5 +1,3 @@
-
-
 const refs = {
     timerIdRef: document.querySelector('#timer-1'),
     daysRef: document.querySelector('[data-value="days"]'),
@@ -8,7 +6,7 @@ const refs = {
     secsRef: document.querySelector('[data-value="secs"]'),
 }
 
-class Timer {
+class CountdownTimer {
     constructor({onTick, targetDate, selector}) {
         this.timer = selector;
         this.onTick = onTick;
@@ -51,15 +49,9 @@ function updateClockfase({ days, hours, mins, secs }) {
 }
 
 
-new Timer({
-    onTick: updateClockfase,
-    selector: '#timer-1',
-    targetDate: new Date('Jan 1, 2022'),
-   
+new CountdownTimer({
+   selector: '#timer-1',
+   targetDate: new Date('Jan 1, 2022'),
+   onTick: updateClockfase,
 });
-
-
-
-
-
 
